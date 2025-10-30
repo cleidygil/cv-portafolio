@@ -4,27 +4,64 @@ import { jetBrains } from "@/components/ui/fonts";
 import "./globals.css";
 // import { bitcount } from "@/components/ui/fonts";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Cleidy Gil - Desarrolladora Frontend",
-  description: "Portafolio profesional de Cleidy Gil",
-  keywords: ["frontend", "react", "nextjs", "developer", "portfolio"],
-  authors: [{ name: "Cleidy Gil" }],
+  title: {
+    default: "Cleidy Gil - Desarrolladora Frontend",
+    template: "%s | Cleidy",
+  },
+  description:
+    "Desarrolladora Frontend especializada en React, Next.js y TypeScript. Creando soluciones web y móviles funcionales y responsivas.",
+  keywords: [
+    "desarrollador frontend",
+    "react",
+    "next.js",
+    "typescript",
+    "javascript",
+    "desarrollo web",
+    "UI/UX",
+    "cleidy",
+  ],
+  authors: [{ name: "Cleidy" }],
+  creator: "Cleidy",
+  publisher: "Cleidy",
   openGraph: {
     title: "Cleidy Gil - Desarrolladora Frontend",
     description: "Portafolio profesional de desarrollo frontend",
     type: "website",
     locale: "es_ES",
   },
+  // Favicons y app icons
+  icons: {
+    icon: [
+      {
+        url: "favicon/favicon-16x16.png",
+        sizes: "any",
+      },
+      {
+        url: "favicon/favicon-16x16.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+      {
+        url: "favicon/android-chrome-192x192.png",
+        type: "image/png",
+        sizes: "192x192",
+      },
+      {
+        url: "favicon/android-chrome-512x512.png",
+        type: "image/png",
+        sizes: "512x512",
+      },
+    ],
+    apple: [
+      {
+        url: "favicon/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
+  category: "technology",
 };
 
 export default function RootLayout({
@@ -34,11 +71,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${jetBrains.className} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${jetBrains.className} antialiased`}>{children}</body>
     </html>
   );
 }
