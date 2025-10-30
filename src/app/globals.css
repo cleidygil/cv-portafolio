@@ -18,7 +18,79 @@
     --foreground: #ededed;
   }
 }
+/* En tu globals.css */
+@layer utilities {
+  .skill-gradient-1 {
+    stop-color: #3B82F6;
+  }
+  .skill-gradient-2 {
+    stop-color: #8B5CF6;
+  }
+  .skill-gradient-3 {
+    stop-color: #10B981;
+  }
+   .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .about-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  .project-card-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+    @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
 
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  /* Efecto de typing */
+  .typing-effect {
+    border-right: 2px solid;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: currentColor }
+  }
+}
 body {
   background: var(--background);
   color: var(--foreground);
