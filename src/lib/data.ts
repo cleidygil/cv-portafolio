@@ -41,6 +41,7 @@ export const contactData: ContactItem[] = [
   },
 ];
 
+
 export const socialLinks: SocialLink[] = [
   {
     name: "GitHub",

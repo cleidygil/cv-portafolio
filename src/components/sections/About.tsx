@@ -2,7 +2,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { StatsCard } from "@/components/ui/StatsCard";
 import { AboutData } from "@/lib/type";
 type AboutProps = {

@@ -1,21 +1,18 @@
+import { NextConfig } from "next"
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
+const isProd = process.env.NODE_ENV === 'production'
+const repoName = process.env.NEXT_PUBLIC_BASE_PATH // ⚠️ CAMBIA POR EL NOMBRE REAL DE TU REPOSITORIO
+
+const nextConfig: NextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  basePath: isProd ? `/${repoName}` : '',
+  assetPrefix: isProd ? `/${repoName}/` : '',
   images: {
-     unoptimized: true, // IMPORTANTE para GitHub Pages
-    domains: ['images.unsplash.com', 'via.placeholder.com'], // Dominios para next/image
-    formats: ['image/webp', 'image/avif'], // Formatos modernos
+    unoptimized: true
   },
-  // Optimizaciones para performance
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production', // Remover consoles en producción
-  },
-  // Para variables de entorno
-  env: {
-    CUSTOM_KEY: process.env.CUSTOM_KEY,
-  }
+  experimental: { appDir: true } as any,
 }
 
-module.exports = nextConfig
+export default nextConfig

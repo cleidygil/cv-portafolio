@@ -1,10 +1,9 @@
 // components/ui/ProjectCard.tsx
 'use client'
 
-import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useState } from 'react'
-import { motion } from 'framer-motion'
+import { useState } from 'react'
 import { ProjectData } from '../../lib/type'
-import Image from 'next/image'
+import Image from '@/components/ui/Image'
 import Link from 'next/link'
 
 interface ProjectCardProps {
@@ -19,13 +18,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       {/* Imagen del proyecto */}
       <div className="relative h-48 overflow-hidden">
         <Image
-          src={project.image}
+         src={project.image}
           alt={project.title}
-          fill
+          width={600}
+          height={200}
           className={`object-cover transition-transform duration-500 group-hover:scale-110 ${
             isImageLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           onLoad={() => setIsImageLoaded(true)}
+          fallback="/images/projects/placeholder.jpg"
         />
         
         {/* Overlay de tecnologías */}
