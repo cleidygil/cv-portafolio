@@ -17,15 +17,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     <div className="group bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
       {/* Imagen del proyecto */}
       <div className="relative h-48 overflow-hidden">
-        <Image
-         src={project.image}
+       <Image
+          src={project.image}
           alt={project.title}
           width={600}
           height={200}
-          className={`object-cover transition-transform duration-500 group-hover:scale-110 ${
-            isImageLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
-          onLoad={() => setIsImageLoaded(true)}
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
           fallback="/images/projects/placeholder.jpg"
         />
         

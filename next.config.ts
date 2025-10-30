@@ -1,10 +1,9 @@
-import { NextConfig } from "next"
-
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production'
-const repoName = process.env.NEXT_PUBLIC_BASE_PATH // ⚠️ CAMBIA POR EL NOMBRE REAL DE TU REPOSITORIO
 
-const nextConfig: NextConfig = {
+const isProd = process.env.NODE_ENV === 'production';
+const repoName = 'https://github.com/cleidygil/cv-portafolio'; // ⚠️ CAMBIA POR EL NOMBRE REAL
+
+const nextConfig = {
   output: 'export',
   trailingSlash: true,
   basePath: isProd ? `/${repoName}` : '',
@@ -12,7 +11,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  experimental: { appDir: true } as any,
-}
+  experimental: {
+    appDir: true,
+  }
+};
 
-export default nextConfig
+module.exports = nextConfig;
