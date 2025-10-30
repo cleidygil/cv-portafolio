@@ -1,31 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Vercel maneja automáticamente el optimizado de imágenes
+  output: 'export', // ← Esto es CRUCIAL para GitHub Pages
+  trailingSlash: true,
+  basePath: process.env.NODE_ENV === 'production' ? '/poseidon-app' : '', // Reemplaza con tu repo name
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/poseidon-app/' : '', // Reemplaza con tu repo name
   images: {
-    domains: [], // Agrega dominios externos si usas imágenes de otros sitios
+    unoptimized: true, // ← Necesario para static export
   },
-  // Habilitar todas las características de Next.js
+  // Deshabilitar características que no funcionan con static export
   experimental: {
     appDir: true,
   },
-  // Opcional: Configurar headers para mejor cache
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-        ],
-      },
-    ];
-  },
-};
+}
 
-export default nextConfig;
+module.exports = nextConfig
