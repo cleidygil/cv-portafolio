@@ -142,8 +142,7 @@ export const Header = () => {
               <div className="relative w-full h-full bg-gray-300 dark:bg-gray-600 rounded-full overflow-hidden border-8 border-white dark:border-gray-800 shadow-2xl">
                 {/* Aquí va tu foto - reemplaza con Image de Next.js si tienes foto */}
                 <div className="w-full h-full flex items-center justify-center text-gray-400 dark:text-gray-500">
-                 <img
-
+                 <Image
                   src='/images/Cg1.png'
                   alt='Cleidy Gil'
                   width={300}
