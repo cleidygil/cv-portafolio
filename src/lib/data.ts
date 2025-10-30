@@ -53,10 +53,7 @@ export const socialLinks: SocialLink[] = [
     icon: "linkedin",
   },
 ];
-// export const aboutData: AboutData = {
-//   description:
-//     "Desarrollador Front-end con experiencia en la creación de aplicaciones web modernas y escalables utilizando tecnologías como React, Next.js y Node.js. Apasionado por el aprendizaje continuo y la resolución de problemas complejos.",
-// };
+
 export const aboutData: AboutData = {
   name: "Cleidy Gil",
   title: "Desarrolladora Frontend",
@@ -228,7 +225,7 @@ export const projects: ProjectData[] = [
       "Sistema de gestión empresarial (ERP) para el sector Aseo Urbano, con módulos de servicios, tarifas, clientes, condominios, tickets y facturación electrónica.",
     image: "/images/projects/secoi2.png",
     technologies: ["Angular", "HTML5", "API REST", "Chart.js"],
-    demoUrl: "https://secoi.agylsoft.com",
+    demoUrl: "https://secoi.agylsoft.app/login",
     codeUrl: "https://github.com/G-SOFT-TECHNOLOGIES/secoi-frontend",
     featured: false,
     date: "2023",

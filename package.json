@@ -1,12 +1,16 @@
 {
-  "name": "cv-portfolio",
+  "name": "cv-portafolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+     "build:static": "next build && next export",
+    "build:gh-pages": "NEXT_PUBLIC_BASE_PATH=/cv-portafolio next build && next export",
+    "export": "next export",
+    "deploy": "npm run build:gh-pages && touch out/.nojekyll && gh-pages -d out -t true"
   },
   "dependencies": {
     "clsx": "^2.1.1",

@@ -27,20 +27,8 @@ export const Header = () => {
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left"
           >
-            {/* Saludo */}
-            {/* <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4"
-            >
-              HELLO, I'M{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                CLEIDY!
-              </span>
-            </motion.h1> */}
-            {/* Título con typing effect */}
-            <motion.div
+            
+           <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -157,8 +145,8 @@ export const Header = () => {
                  <Image
                   src='/images/Cg1.png'
                   alt='Cleidy Gil'
-                  width={200}
-                  height={200}
+                  width={300}
+                  height={300}
                   className="object-cover  w-full h-full"
                 />
                 </div>
