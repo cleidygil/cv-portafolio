@@ -3,12 +3,12 @@
 
 import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Project } from '../../lib/data'
+import { ProjectData } from '../../lib/type'
 import Image from 'next/image'
 import Link from 'next/link'
 
 interface ProjectCardProps {
-  project: Project
+  project: ProjectData
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
@@ -78,9 +78,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             Tecnologías utilizadas:
           </p>
           <div className="flex flex-wrap gap-2">
-            {project.technologies.slice(0, 4).map((tech: boolean | Key | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined) => (
+            {project.technologies.slice(0, 4).map((tech, idx) => (
               <span
-                key={tech}
+                key={typeof tech === 'string' || typeof tech === 'number' ? tech : idx}
                 className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-sm rounded-full font-medium"
               >
                 {tech}
