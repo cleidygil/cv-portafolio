@@ -58,4 +58,6 @@ export interface ImageProps {
   className?: string
   fallback?: string
   priority?: boolean
+  onLoad?: () => void
+  onError?: () => void
 }

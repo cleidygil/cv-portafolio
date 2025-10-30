@@ -1,19 +1,31 @@
 /** @type {import('next').NextConfig} */
-
-const isProd = process.env.NODE_ENV === 'production';
-const repoName = 'https://github.com/cleidygil/cv-portafolio'; // ⚠️ CAMBIA POR EL NOMBRE REAL
-
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
-  basePath: isProd ? `/${repoName}` : '',
-  assetPrefix: isProd ? `/${repoName}/` : '',
+  // Vercel maneja automáticamente el optimizado de imágenes
   images: {
-    unoptimized: true
+    domains: [], // Agrega dominios externos si usas imágenes de otros sitios
   },
+  // Habilitar todas las características de Next.js
   experimental: {
     appDir: true,
-  }
+  },
+  // Opcional: Configurar headers para mejor cache
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+        ],
+      },
+    ];
+  },
 };
 
-module.exports = nextConfig;
+export default nextConfig;

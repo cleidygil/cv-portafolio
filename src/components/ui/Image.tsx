@@ -1,9 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { useBasePath } from '@/hooks/useBasePath'
-import { ImageProps } from '@/lib/type'
 import NextImage from 'next/image'
+import { ImageProps } from '@/lib/type'
 
 const Image: React.FC<ImageProps> = ({
   src,
@@ -13,10 +12,10 @@ const Image: React.FC<ImageProps> = ({
   height,
   fallback = '/images/placeholder.jpg',
   priority = false,
+  onLoad,
+  onError,
   ...props
 }) => {
-  const basePath = useBasePath()
-  const [imageSrc, setImageSrc] = useState<string>(`${basePath}${src}`)
   const [hasError, setHasError] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
@@ -24,12 +23,13 @@ const Image: React.FC<ImageProps> = ({
     if (!hasError) {
       console.warn(`Error loading image: ${src}`)
       setHasError(true)
-      setImageSrc(`${basePath}${fallback}`)
+      onError?.()
     }
   }
 
   const handleLoad = (): void => {
     setIsLoading(false)
+    onLoad?.()
   }
 
   return (
@@ -40,12 +40,16 @@ const Image: React.FC<ImageProps> = ({
         </div>
       )}
       <NextImage
-        src={imageSrc}
+        src={hasError ? fallback : src}
         alt={alt}
         width={width}
         height={height}
-        className={`transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
-        onLoadingComplete={handleLoad}
+        className={`
+          ${className}
+          transition-opacity duration-300
+          ${isLoading ? 'opacity-0' : 'opacity-100'}
+        `}
+        onLoad={handleLoad}
         onError={handleError}
         priority={priority}
         {...props}
