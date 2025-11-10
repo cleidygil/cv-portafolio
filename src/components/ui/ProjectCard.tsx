@@ -23,7 +23,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           width={600}
           height={200}
           className="object-cover transition-transform duration-500 group-hover:scale-110"
-          fallback="/images/projects/placeholder.jpg"
         />
 
         {/* Overlay de tecnologías */}

@@ -1,34 +1,36 @@
 'use client'
 
 import { useState } from 'react'
-import NextImage from 'next/image'
 import { ImageProps } from '@/lib/type'
+interface CustomImageProps extends ImageProps {
+  eager?: boolean // Nueva prop personalizada
+}
 
-const Image: React.FC<ImageProps> = ({
+const Image: React.FC<CustomImageProps> = ({
   src,
   alt,
   className = '',
   width,
   height,
-  fallback = '/images/logoCG.png',
-  priority = false,
+  fallback = 'images/LogoCG.png',
+  eager = false,
   onLoad,
   onError,
   ...props
 }) => {
   const [hasError, setHasError] = useState<boolean>(false)
-  const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const handleError = (): void => {
     if (!hasError) {
-      console.error(`❌ Error cargando imagen: ${src}`)
+      // console.error(`❌ Error cargando imagen: ${src}`)
       setHasError(true)
       onError?.()
     }
   }
 
   const handleLoad = (): void => {
-    console.log(`✅ Imagen cargada: ${src}`)
+    // console.log(`✅ Imagen cargada: ${src}`)
     setIsLoading(false)
     onLoad?.()
   }
@@ -52,7 +54,8 @@ const Image: React.FC<ImageProps> = ({
         `}
         onLoad={handleLoad}
         onError={handleError}
-        priority={priority}
+        loading={eager ? 'eager' : 'lazy'} // ← Usamos loading en lugar de priority
+        decoding="async"
         {...props}
       />
     </div>

@@ -58,7 +58,7 @@ export const socialLinks: SocialLink[] = [
 export const aboutData: AboutData = {
   name: "Cleidy Gil",
   title: "Desarrolladora Frontend",
-  image: "/images/4.5.cvg.png",
+  image: "./images/4.5.cvg.png",
   description:
     "Soy una apasionada desarrolladora frontend con más de 3 años de experiencia creando aplicaciones web modernas y responsive. Me especializo en React, Next.js y TypeScript, siempre buscando las mejores prácticas y las tecnologías más recientes. Me encanta transformar ideas complejas en interfaces intuitivas y eficientes.",
   experience:
@@ -205,7 +205,7 @@ export const projects: ProjectData[] = [
     title: "Movilpay Admin",
     description:
       "Plataforma de Servicio de Notificaciones de Transacciones Bancarias a diferentes empresas, con panel administrativo. Implementa autenticación JWT y gestión de inventario.",
-    image: "/images/projects/moviladminnew.png",
+    image: "./images/projects/moviladminnew.png",
     technologies: [
       "Next.js",
       "TypeScript",
@@ -224,7 +224,7 @@ export const projects: ProjectData[] = [
     title: "AgylSoft - Secoi",
     description:
       "Sistema de gestión empresarial (ERP) para el sector Aseo Urbano, con módulos de servicios, tarifas, clientes, condominios, tickets y facturación electrónica.",
-    image: "/images/projects/secoi2.png",
+    image: "./images/projects/secoi2.png",
     technologies: ["Angular", "HTML5", "API REST", "Chart.js"],
     demoUrl: "https://secoi.agylsoft.app/login",
     codeUrl: "https://github.com/G-SOFT-TECHNOLOGIES/secoi-frontend",
@@ -237,7 +237,7 @@ export const projects: ProjectData[] = [
     title: "Portal G-Network",
     description:
       "Sistema de gestión de usuarios para proveedores de servicios de Internet (ISP), con funcionalidades de administración de clientes, facturación y soporte técnico.",
-    image: "/images/projects/gnet2.png",
+    image: "./images/projects/gnet2.png",
     technologies: ["Angular", "Material-UI", "API REST", "CSS3", "HTML5"],
     demoUrl: "https://g-user.gnetworkve.com",
     codeUrl: "#",
@@ -250,7 +250,7 @@ export const projects: ProjectData[] = [
     title: "Portal Powerlink",
     description:
       "Sistema de gestión de usuarios para proveedores de servicios de Internet (ISP), con funcionalidades de administración de clientes, facturación y soporte técnico.",
-    image: "/images/projects/powerlink.jpeg",
+    image: "./images/projects/powerlink.jpeg",
     technologies: ["Angular", "Tailwind CSS", "Material-UI", "API REST", "CSS3", "HTML5"],
     demoUrl: "#",
     codeUrl: "https://github.com/G-SOFT-TECHNOLOGIES/powerlink-gsoft-portal",
@@ -263,7 +263,7 @@ export const projects: ProjectData[] = [
     title: "G-Soft Admin",
     description:
       "Sistema de gestión administrativa para proveedores de servicios de Internet (ISP), con panel de control, gestión de usuarios y reportes personalizados.",
-    image: "/images/projects/gsoftPanel.jpeg",
+    image: "./images/projects/gsoftPanel.jpeg",
     technologies: ["Angular", "Material-UI", "Tailwind CSS", "API REST", "CSS3", "HTML5"],
     demoUrl: "https://pwlf.agylsoft.app/login",
     codeUrl: "https://github.com/G-SOFT-TECHNOLOGIES/powerlink-gsoft-frontend",
@@ -276,7 +276,7 @@ export const projects: ProjectData[] = [
     title: "Pagina Sorteos - Bahia SuperMarket",
     description:
       "Plataforma de sorteos en línea en tiempo real.",
-    image: "/images/projects/sorteobaihia.gif",
+    image: "./images/projects/sorteobaihia.gif",
     technologies: ["Angular", "js-confetti","Tailwind CSS", "API REST", "Styled Components"],
     demoUrl: "#",
     codeUrl: "https://github.com/cleidygil/sorteo-bahia",
