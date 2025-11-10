@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { jetBrains } from "@/components/ui/fonts";
-import "./globals.css";
+import "@/app/globals.css";
 // import { bitcount } from "@/components/ui/fonts";
 
 export const metadata: Metadata = {
@@ -34,28 +34,28 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/public/favicon/favicon-16x16.png",
+        url: "/favicon/favicon-16x16.png",
         sizes: "any",
       },
       {
-        url: "/public/favicon/favicon-16x16.png",
+        url: "/favicon/favicon-32x32.png",
         type: "image/png",
         sizes: "32x32",
       },
       {
-        url: "/public/favicon/android-chrome-192x192.png",
+        url: "/favicon/android-chrome-192x192.png",
         type: "image/png",
         sizes: "192x192",
       },
       {
-        url: "/public/favicon/android-chrome-512x512.png",
+        url: "/favicon/android-chrome-512x512.png",
         type: "image/png",
         sizes: "512x512",
       },
     ],
     apple: [
       {
-        url: "/public/favicon/apple-touch-icon.png",
+        url: "/favicon/apple-touch-icon.png",
         sizes: "180x180",
         type: "image/png",
       },
