@@ -3,7 +3,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 
 export const Header = () => {
   return (
