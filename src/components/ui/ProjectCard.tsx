@@ -1,23 +1,23 @@
 // components/ui/ProjectCard.tsx
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { ProjectData } from '../../lib/type'
-import Image from '@/components/ui/Image'
-import Link from 'next/link'
+import { useState } from "react";
+import { ProjectData } from "../../lib/type";
+import Image from "@/components/ui/Image";
+import Link from "next/link";
 
 interface ProjectCardProps {
-  project: ProjectData
+  project: ProjectData;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  const [isImageLoaded, setIsImageLoaded] = useState(false)
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   return (
     <div className="group bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
       {/* Imagen del proyecto */}
       <div className="relative h-48 overflow-hidden">
-       <Image
+        <Image
           src={project.image}
           alt={project.title}
           width={600}
@@ -25,16 +25,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           className="object-cover transition-transform duration-500 group-hover:scale-110"
           fallback="/images/projects/placeholder.jpg"
         />
-        
+
         {/* Overlay de tecnologías */}
         <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
           <div className="flex gap-2">
             <Link
-              href={project.demoUrl || '#'}
-              className="bg-white text-gray-900 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2"
+              href={project.demoUrl || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+                className="bg-white text-gray-900 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
               </svg>
               Demo
             </Link>
@@ -44,8 +56,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               rel="noopener noreferrer"
               className="bg-gray-800 text-white px-4 py-2 rounded-lg font-medium hover:bg-gray-700 transition-colors duration-200 flex items-center gap-2"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                />
               </svg>
               Código
             </Link>
@@ -65,7 +87,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
           {project.title}
         </h3>
-        
+
         <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
           {project.description}
         </p>
@@ -78,7 +100,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <div className="flex flex-wrap gap-2">
             {project.technologies.slice(0, 4).map((tech, idx) => (
               <span
-                key={typeof tech === 'string' || typeof tech === 'number' ? tech : idx}
+                key={
+                  typeof tech === "string" || typeof tech === "number"
+                    ? tech
+                    : idx
+                }
                 className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-sm rounded-full font-medium"
               >
                 {tech}
@@ -99,7 +125,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProjectCard
+export default ProjectCard;
