@@ -10,7 +10,7 @@ const Image: React.FC<ImageProps> = ({
   className = '',
   width,
   height,
-  fallback = '/images/placeholder.jpg',
+  fallback = '/images/logoCG.png',
   priority = false,
   onLoad,
   onError,
