@@ -21,13 +21,14 @@ const Image: React.FC<ImageProps> = ({
 
   const handleError = (): void => {
     if (!hasError) {
-      console.warn(`Error loading image: ${src}`)
+      console.error(`❌ Error cargando imagen: ${src}`)
       setHasError(true)
       onError?.()
     }
   }
 
   const handleLoad = (): void => {
+    console.log(`✅ Imagen cargada: ${src}`)
     setIsLoading(false)
     onLoad?.()
   }
@@ -39,7 +40,7 @@ const Image: React.FC<ImageProps> = ({
           <div className="text-gray-400 text-sm">Cargando...</div>
         </div>
       )}
-      <NextImage
+      <img
         src={hasError ? fallback : src}
         alt={alt}
         width={width}

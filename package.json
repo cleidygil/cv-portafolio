@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:gh-pages": "GITHUB_PAGES=true next build && next export",
+    "export": "next export",
+    "deploy:gh-pages": "npm run build:gh-pages && touch out/.nojekyll && npx gh-pages -d out -t true",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "clsx": "^2.1.1",
