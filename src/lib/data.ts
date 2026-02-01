@@ -60,9 +60,9 @@ export const aboutData: AboutData = {
   title: "Desarrolladora Frontend",
   image: "./images/4.5.cvg.png",
   description:
-    "Soy una apasionada desarrolladora frontend con más de 3 años de experiencia creando aplicaciones web modernas y responsive. Me especializo en React, Next.js y TypeScript, siempre buscando las mejores prácticas y las tecnologías más recientes. Me encanta transformar ideas complejas en interfaces intuitivas y eficientes.",
+    "Soy una apasionada desarrolladora frontend con más de 4 años de experiencia creando aplicaciones web modernas y responsive. Me especializo en React, Next.js y TypeScript, siempre buscando las mejores prácticas y las tecnologías más recientes. Me encanta transformar ideas complejas en interfaces intuitivas y eficientes.",
   experience:
-    "+3 años desarrollando aplicaciones web modernas para startups y empresas nacionales. Especializada en React y ecosistemas JavaScript.",
+    "+4 años desarrollando aplicaciones web modernas para startups y empresas nacionales. Especializada en React y ecosistemas JavaScript.",
   education:
     "TSU en Informática - Universidad Bolivariana de Venezuela. 2017 - 2020.",
   stats: [
